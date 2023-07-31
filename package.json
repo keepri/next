@@ -1,0 +1,47 @@
+{
+    "name": "base",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "lint": "next lint",
+        "format": "next lint --fix",
+        "start": "next start",
+        "clean": "rm -rf node_modules .next",
+        "db-push": "drizzle-kit push:mysql --config=drizzle.config.mjs",
+        "db-migrate": "drizzle-kit generate:mysql --config=drizzle.config.mjs",
+        "db-studio": "drizzle-kit studio --port 5556 --verbose",
+        "db-drop": "drizzle-kit drop --config=drizzle.config.mjs",
+        "db-up": "drizzle-kit up:mysql --config=drizzle.config.mjs",
+        "db-check": "drizzle-kit check:mysql --config=drizzle.config.mjs"
+    },
+    "dependencies": {
+        "@legendapp/state": "^1.8.0",
+        "@planetscale/database": "^1.10.0",
+        "@t3-oss/env-nextjs": "^0.6.0",
+        "drizzle-orm": "^0.27.2",
+        "drizzle-zod": "^0.4.4",
+        "next": "^13.4.12",
+        "next-auth": "^4.22.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "zod": "^3.21.4"
+    },
+    "devDependencies": {
+        "@types/eslint": "^8.44.1",
+        "@types/node": "^18.16.19",
+        "@types/react": "^18.2.17",
+        "@types/react-dom": "^18.2.7",
+        "@typescript-eslint/eslint-plugin": "^6.2.0",
+        "@typescript-eslint/parser": "^6.2.0",
+        "autoprefixer": "^10.4.14",
+        "drizzle-kit": "^0.19.12",
+        "eslint": "^8.46.0",
+        "eslint-config-next": "^13.4.12",
+        "eslint-config-prettier": "^8.9.0",
+        "postcss": "^8.4.27",
+        "tailwindcss": "^3.3.3",
+        "typescript": "^5.1.6"
+    }
+}
