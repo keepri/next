@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
 
@@ -20,7 +21,7 @@ export const env = createEnv({
             process.env.VERCEL ? z.string().min(1) : z.string().url(),
         ),
         // Add `.min(1) on ID and SECRET if you want to make sure they're not empty
-        DATABASE_URL: z.string(),
+        DATABASE_URL: z.string().min(1),
     },
 
     /**
