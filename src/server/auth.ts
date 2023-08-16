@@ -7,7 +7,7 @@ import {
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { type RoleModel } from "./db/schema";
 import { db } from "./db";
-import { RoleService } from "~/utils/service";
+import { RoleManager } from "~/utils/service";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -48,8 +48,8 @@ export const authOptions: NextAuthOptions = {
         },
         async signIn(params) {
             try {
-                await RoleService.assign(+params.user.id, "user");
-                params.user.roleList = await RoleService.getUserRoles(+params.user.id);
+                await RoleManager.assign(+params.user.id, "user");
+                params.user.roleList = await RoleManager.getUserRoles(+params.user.id);
 
                 return true;
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any

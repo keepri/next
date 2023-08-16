@@ -2,7 +2,7 @@ import { eq, and } from "drizzle-orm";
 import { db } from "~/server/db";
 import { roles, userRoles, type RoleModel, type UserModel } from "~/server/db/schema";
 
-export class RoleService {
+export class RoleManager {
     static async getByName<TColumns extends keyof RoleModel>(
         roleName: RoleModel["name"],
         columns?: Partial<Record<TColumns, boolean>>,
