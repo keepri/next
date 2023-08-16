@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1692172417655,
+      "tag": "0000_foamy_eddie_brock",
+      "breakpoints": true
+    }
+  ]
+}

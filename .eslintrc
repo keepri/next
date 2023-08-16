@@ -101,6 +101,16 @@
                 "allowTemplateLiterals": true
             }
         ],
+        "comma-dangle": [
+            "warn",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline",
+                "functions": "always-multiline"
+            }
+        ],
         "jsx-quotes": [
             1,
             "prefer-double"
