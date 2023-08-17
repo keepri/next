@@ -16,11 +16,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout(props: PropsWithChildren): JSX.Element {
-    return <html lang="en">
-        <body className={inter.className}>
-            <ClientProviders>
-                {props.children}
-            </ClientProviders>
-        </body>
-    </html>;
+    return (
+        <html lang="en">
+            <body className={inter.className}>
+                <ClientProviders>
+                    {props.children}
+                </ClientProviders>
+            </body>
+        </html>
+    );
 }

@@ -2,11 +2,13 @@
 
 - TypeScript
 - React with Next 13
-- TailwindCSS
 - PlanetScale with DrizzleORM
 - NextAuth
 - LegendApp State Manager
+- Shadcn's UI components
+- TailwindCSS
 - Zod
+- t3 env variables
 - Eslint
 
 ## To do after cloning
