@@ -5,9 +5,8 @@ import {
     type DefaultUser,
 } from "next-auth";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import { type RoleModel } from "./db/schema";
 import { db } from "./db";
-import { RoleManager } from "~/utils/service";
+import { RoleManager } from "~/utils/manager";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -19,13 +18,10 @@ declare module "next-auth" {
     interface Session extends DefaultSession {
         user: {
             id: number;
-            roleList: Array<RoleModel["name"]>;
         } & DefaultSession["user"];
     }
 
-    interface User extends DefaultUser {
-        roleList: Array<RoleModel["name"]>;
-    }
+    interface User extends DefaultUser { }
 }
 
 /**
@@ -41,7 +37,6 @@ export const authOptions: NextAuthOptions = {
         session(params) {
             if (params.user) {
                 params.session.user.id = +params.user.id;
-                params.session.user.roleList = params.user.roleList;
             }
 
             return params.session;
@@ -49,7 +44,6 @@ export const authOptions: NextAuthOptions = {
         async signIn(params) {
             try {
                 await RoleManager.assign(+params.user.id, "user");
-                params.user.roleList = await RoleManager.getUserRoles(+params.user.id);
 
                 return true;
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
