@@ -6,7 +6,7 @@ import {
 } from "next-auth";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { db } from "./db";
-import { RoleManager } from "~/utils/manager";
+import { RoleManager } from "~/utils/managers/role";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
