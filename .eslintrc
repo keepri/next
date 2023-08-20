@@ -27,6 +27,13 @@
         "prettier"
     ],
     "rules": {
+        "@typescript-eslint/array-type": [
+            "warn",
+            {
+                "default": "generic",
+                "readonly": "generic"
+            }
+        ],
         "@typescript-eslint/consistent-type-imports": [
             "warn",
             {
