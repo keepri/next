@@ -11,7 +11,7 @@
         "clean": "rm -rf node_modules .next",
         "db-push": "drizzle-kit push:mysql --config=drizzle.config.mjs",
         "db-migrate": "drizzle-kit generate:mysql --config=drizzle.config.mjs",
-        "db-studio": "drizzle-kit studio --port 5556 --verbose",
+        "db-studio": "drizzle-kit studio --port 5556 --verbose --config=drizzle.config.mjs",
         "db-drop": "drizzle-kit drop --config=drizzle.config.mjs",
         "db-up": "drizzle-kit up:mysql --config=drizzle.config.mjs",
         "db-check": "drizzle-kit check:mysql --config=drizzle.config.mjs"
